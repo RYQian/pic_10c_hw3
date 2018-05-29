@@ -80,8 +80,6 @@ public:
             int answer = begin_index+offset;
             
             
-            
-            
             if( (begin_index + offset) == Max){
             
                 std::cout<<"  whaaaat      "<<  std::endl;
@@ -96,7 +94,6 @@ public:
             else{
                 answer = (begin_index+offset)% Max;
                 
-                //std::cout<<"  whaaaat     happpennnned   "<<offset<<"   "<<  std::endl;
             }
             
             
@@ -124,11 +121,10 @@ public:
             // Replace the line(s) below with your code.
             
             if((this->parent ==  *(&rhs.parent)) && (this->offset == rhs.offset)){
-                 //std::cout<<"hahahahahahah    true        ahahahah"<<  (this ==  &rhs)<< "dljasdjaljd"<<std::endl;
                return true;
             }
             else{
-                 //std::cout<<"hahaha=======hahah      false      ahahahahah"<<std::endl;
+
             return false;
             }
         }
@@ -136,24 +132,10 @@ public:
         bool operator!=( const iterator& rhs ) const {
             // Replace the line(s) below with your code.
             if((this->parent ==  *(&rhs.parent)) && (this->offset == rhs.offset)){
-                //std::cout<<"hahahahahah      false      ahahahahah"<<std::endl;
                 return false;
             }
             else{
                
-                /*
-                if((this->offset != rhs.offset))
-                {std::cout<<"hahahahahahah   offfffffsssseeett       ahahahah"<<std::endl;
-                 std::cout<<"this   offset   "<<this->offset<<std::endl;
-                    std::cout<<"rhs   offset "<<  rhs.offset<<std::endl;
-                    std::cout<<std::endl;
-                    
-                    
-                    
-                }
-                */
-                
-                //std::cout<<"hahahahahahah    true        ahahahah"<<std::endl;
                 return true;
             }
         }
@@ -275,8 +257,7 @@ public:
             }
         }
      
-        
-         std::cout << "  begin_index: " << this->begin_index << "   ring_size : " << this->ring_size << "   end_index : " << this->end_index()<< '\n';
+     //    std::cout << "  begin_index: " << this->begin_index << "   ring_size : " << this->ring_size << "   end_index : " << this->end_index()<< '\n';
         
         
         return;
@@ -292,8 +273,7 @@ public:
             this->ring_size--;
             this->begin_index = (this->begin_index+1)%(MAX_SIZE-1);
             
-            std::cout << "  begin_index: " << this->begin_index << "   ring_size : " << this->ring_size << "   end_index : " << this->end_index()<< '\n';
-        
+           // std::cout << "  begin_index: " << this->begin_index << "   ring_size : " << this->ring_size << "   end_index : " << this->end_index()<< '\n';
         }
         return;
     }
@@ -306,16 +286,7 @@ public:
     }
     iterator end() {
         // Replace the line(s) below with your code.
-        
-        
-        //std::cout<<"           end  index:    "<< this->ring_size<<std::endl;
-        
         return iterator(this,this->ring_size-1);
-        
-        
-        
-        
-        
         
     }
     
@@ -346,7 +317,6 @@ int main(){
         rq.push_back(i+1);
     
     
-     std::cout << "hhhhh      hhhhhhhh: "<< '\n';
     rq.dump_queue();
     rq.pop_front();
     
@@ -356,14 +326,11 @@ int main(){
     // RingQueue<int,7>::iterator it = rq.begin() ;
     auto it = rq.begin() ;
 
-    
-    std::cout << "hhhhh      hhhhhhh   hhhhhhhhhhhhhhhhhhhhh: "<<rq.size()<< '\n';
     for ( size_t i = 0 ; i < rq.size() ; ++i ) {
         std::cout << "Value: " << *it << ", address: " << &(*it) << '\n';
         std::cout << '\n';
         ++it;
     }
-    std::cout << '\n';
     
     
     
@@ -371,14 +338,6 @@ int main(){
     // implementation of RingQueue<ItemType,int>::end().
     // If the implementation is not correct, it might result in
     // an infinite loop.
-    
-    
-    auto it2 = rq.begin();
-    auto it3 = rq.begin();
-    
-    
-    std::cout<<" chech ======    " << (it2 == it3)<<std:: endl;
-    
     
     
      std::cout << "Queue via iterators: \n";
